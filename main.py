@@ -107,7 +107,7 @@ def train_model(model, train_loader, criterion, optimizer, epochs):
 
 # 训练模型
 loss_values, accuracy_values = train_model(model, train_loader, criterion, optimizer, epochs=50)
-
+torch.save(model.state_dict(), 'handwritten_digit_model.pth')
 # 保存训练结果到TXT文件
 with open('training_results.txt', 'w') as f:
     for epoch, loss, accuracy in zip(range(1, 51), loss_values, accuracy_values):
